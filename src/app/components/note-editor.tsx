@@ -1,33 +1,39 @@
 import React, {useEffect, useState, useRef} from "react";
-import Draft, {
+
+import {
     Editor,
     EditorState,
     RichUtils,
+    DraftEditorCommand,
+    DraftHandleValue,
     getDefaultKeyBinding,
-    DraftEditorCommand, DraftHandleValue, convertFromRaw, convertToRaw,
+    convertFromRaw,
+    convertToRaw,
 } from 'draft-js';
-import Button from '@material-ui/core/Button';
-import {Icon, IconButton} from "@material-ui/core";
+
 import {
     BLOCK_TYPES, INLINE_STYLES,
+    generateUUID
+} from "../shared";
+
+import {
     ControlsProps,
     EditorButtonProps,
-    SyntheticKeyboardEvent, NoteEditorProps
-} from "../shared";
-import {generateUUID} from "../shared/utility";
+    NoteEditorProps,
+    SyntheticKeyboardEvent
+} from "../types";
 
 
 const EditorButton = (props: EditorButtonProps) => {
     const {active, label, style, icon, onToggle} = props;
 
     return (
-        <IconButton className={`editor-btn ${active && 'active'}`}
-                    aria-label={label}
-                    size={"small"}
-                    title={label}
-                    onMouseDown={() => onToggle(style)}>
+        <button className={`editor-btn ${active && 'active'}`}
+                aria-label={label}
+                title={label}
+                onMouseDown={() => onToggle(style)}>
             {icon}
-        </IconButton>
+        </button>
     );
 };
 
@@ -58,7 +64,7 @@ const BlockStyleControls = ({editorState, onToggle}: ControlsProps) => {
 
 const InlineStyleControls = ({editorState, onToggle}: ControlsProps) => {
     const currentStyle = editorState.getCurrentInlineStyle();
-
+    console.log(`Current styles:`, currentStyle);
     const buttonSet = INLINE_STYLES.map(({label, style, icon}) =>
         <EditorButton
             key={label}
@@ -81,12 +87,12 @@ export default function NoteEditor({
                                        data,
                                        cancel,
                                        handleNote
-}: NoteEditorProps) {
+                                   }: NoteEditorProps) {
     const state = !!data ?
         EditorState.createWithContent(convertFromRaw(data.editorState)) :
         EditorState.createEmpty();
 
-    console.log(state);
+    // console.log(state);
 
     const [editorState, setEditorState] = useState<EditorState>(
         state
@@ -112,61 +118,56 @@ export default function NoteEditor({
     };
 
     const passedNote = () => {
+        !data ? handleNote({
+                id: generateUUID(),
+                created: +new Date(),
+                changed: +new Date(),
+                inTrashed: false,
+                selected: false,
+                inArchive: false,
+                editorState: convertToRaw(editorState.getCurrentContent())
+            }) :
+            handleNote({
+                ...data,
+                ...{editorState: convertToRaw(editorState.getCurrentContent())}
+            })
 
-       !data ? handleNote({
-            id: generateUUID(),
-            created: +new Date(),
-            changed: +new Date(),
-            inTrashed: false,
-            selected: false,
-            inArchive: false,
-            editorState: convertToRaw(editorState.getCurrentContent())
-        }) :
-           handleNote({
-               ...data,
-               ...{editorState: convertToRaw(editorState.getCurrentContent())}
-           })
+    };
 
+    const logged = () => {
+        console.log(editorState.getSelection());
     };
 
     return (
         <div className={'note-editor'}>
             <div className="row">
+
                 <InlineStyleControls
                     editorState={editorState}
-                    onToggle={type => setEditorState(RichUtils.toggleInlineStyle(editorState, type))}
-                />
+                    onToggle={type => setEditorState(
+                        RichUtils.toggleInlineStyle(editorState, type)
+                    )}/>
 
                 <BlockStyleControls
                     editorState={editorState}
-                    onToggle={type => setEditorState(RichUtils.toggleBlockType(editorState, type))}
-                />
+                    onToggle={type => setEditorState(
+                        RichUtils.toggleBlockType(editorState, type)
+                    )}/>
+
             </div>
 
             <Editor
                 ref={editor}
                 placeholder={'Take a note...'}
-                handleKeyCommand={handleKeyCommand}
-                keyBindingFn={mapKeyToEditorCommand}
                 editorState={editorState}
                 onChange={setEditorState}
+                handleKeyCommand={handleKeyCommand}
+                keyBindingFn={mapKeyToEditorCommand}
             />
 
             <div className={'bottom-controls'}>
-                <Button
-                    onClick={passedNote}
-                    size="small"
-                    variant="contained"
-                    color="primary">
-                    Add
-                </Button>
-
-                <Button
-                    onClick={() => cancel()}
-                    size="small"
-                    variant="contained">
-                    Cancel
-                </Button>
+                <button onClick={logged}>{'Add'}</button>
+                <button onClick={cancel}>{'Cancel'}</button>
             </div>
         </div>
     );

@@ -1,7 +1,4 @@
-import React from "react";
-import {convertToRaw, DraftBlockType, EditorState, RawDraftContentState} from "draft-js";
-
-export type SyntheticKeyboardEvent = React.KeyboardEvent<{}>;
+import {DraftBlockType, EditorState, RawDraftContentState} from "draft-js";
 
 export type EditorButtonProps = {
     active: boolean;
@@ -18,9 +15,9 @@ export type ControlsProps = {
 
 
 export type NoteEditorProps = {
+    data: NoteInstance | null;
     handleNote: (val :NoteInstance) => void;
     cancel: () => any;
-    data: NoteInstance | null;
 }
 
 export interface NoteInstance {

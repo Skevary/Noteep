@@ -1,3 +1,6 @@
+export {}
+/**
+
 import React, {useState} from 'react';
 import NoteEditor from "./components/note-editor";
 import {NoteInstance} from "./shared";
@@ -44,7 +47,7 @@ export default function App() {
 
     const hideNote = () => {
         console.log('Hide Note');
-    }
+    };
 
     return (
         <div className='app'>
@@ -63,3 +66,4 @@ export default function App() {
     );
 }
 
+*/

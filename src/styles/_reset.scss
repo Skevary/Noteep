@@ -1,0 +1,14 @@
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  background-color: var(--noteep-brand);
+  color: rgba(255, 255, 255, 0.87);
+  font-family: Roboto, Arial, sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
