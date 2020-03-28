@@ -1,6 +1,6 @@
-/* Declaration of styles color themes */
-@import 'light.theme', 'dark.theme';
+/* Theme color set declaration */
+@import 'dark.theme', 'light.theme';
 
-:root {
+/* App constant set declaration  */
+@import 'variables';
 
-}

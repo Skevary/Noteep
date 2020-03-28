@@ -1,14 +1,17 @@
+
 body {
-  overflow-x: hidden;
-  overflow-y: auto;
+  background-color: $noteep-bg-color;
+  color: $noteep-color;
   padding: 0;
   margin: 0;
-  background-color: var(--noteep-brand);
-  color: rgba(255, 255, 255, 0.87);
-  font-family: Roboto, Arial, sans-serif;
+  min-width: 360px;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  //-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
+
 }

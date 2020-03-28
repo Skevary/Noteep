@@ -1,6 +1,38 @@
 @import "note";
 
-#app {
+/* App root */
+#noteep {
+  display: grid;
+  grid: 'header header' 4em
+        'aside main' 1fr
+        / 15em 1fr;
+
+  grid-gap: 10px;
+  height: 100vh;
+
+  header {
+    grid-area: header;
+    background-color: $placeholder-color;
+  }
+
+  aside {
+    grid-area: aside;
+    background-color: $menu-bg-color;
+
+    nav {
+    }
+
+    footer {
+    }
+  }
+
+  main {
+    grid-area: main;
+    background-color: $menu-color;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   .top-bar {
     display: flex;
     align-items: center;
@@ -11,4 +43,5 @@
     border-bottom: 1px solid #5f6368;
     box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
   }
+
 }
