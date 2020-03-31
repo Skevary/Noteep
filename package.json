@@ -15,6 +15,7 @@
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-loading-skeleton": "^2.0.1",
     "react-scripts": "3.4.0",
     "typescript": "~3.7.2"
   },
@@ -22,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "icon:generate": "svgr src/assets/icons/ -d src/app/icons/  --typescript --template ./svgrTypescript.js",
+    "icon:clear": "rm -rf src/app/icons/*"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.3.0"
   }
 }
