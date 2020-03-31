@@ -1,0 +1,24 @@
+
+[class^="i-"], [class*=" i-"] {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  margin: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: #252526;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.i-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+svg {
+  width: 2em;
+  height: 2em;
+  fill: $noteep-color;
+}

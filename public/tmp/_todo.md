@@ -1,0 +1,35 @@
+### TODO:
+
+- **Basic Layout** 
+-[ ] header
+-[ ] side-bar
+-[ ] footer
+-[ ] main-container
+-[ ] pretty fonts
+- **Top Bar**
+-[ ] menu btn
+-[ ] logo & named
+-[ ] search input
+-[ ] update menu btn
+-[ ] setting btn
+-[ ] profile block
+- **Navigation**
+-[ ] sections
+-[ ] links
+-[ ] label block
+- **Pages**
+-[ ] notes
+-[ ] archive
+-[ ] trash
+-[ ] card for empty pages
+-[ ] add router
+- **Icons**
+-[X] add svg resources
+-[X] create icons component
+-[ ] use new icons
+-[ ] 
+-[ ] 
+- **Others**
+-[ ] create tooltip
+-[ ] add color theme
+-[ ] 
