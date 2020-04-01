@@ -1,54 +1,33 @@
-nav {
+
+aside {
+  grid-area: aside;
   display: flex;
   flex-direction: column;
-  flex: auto;
   padding: 1em 0;
-  //background-color: $menu-bg-color;
-  .item {
-    display: flex;
-    align-items: center;
-    padding-left: 1em;
-    margin: .15em 0;
-    cursor: pointer;
-    border-bottom-right-radius: $noteep-radius;
-    border-top-right-radius: $noteep-radius;
-    height: 2em;
 
-    .icon-btn {
-      svg {
-        width: 1.5em;
-        height: 1.5em;
-      }
-    }
+  //&.collapsed {
+  //  left: 1em;
+  //  position: relative;
+  //  padding: 1em 0 !important;
+  //  nav {
+  //    position: absolute;
+  //  }
+  //
+  //  footer {
+  //    position: absolute;
+  //  }
+  //}
 
-    .text {
-      width: 10em;
-      padding-left: 1.25em;
-      opacity: 1;
-      overflow: visible;
-    }
-
-
-    &:hover {
-      background-color: $hover-color;
-
-      .icon-btn {
-        svg {
-          //fill: greenyellow;
-        }
-      }
-    }
-
-    &.active {
-      background-color: $active-color;
-    }
+  &.collapsed:hover {
+    box-shadow: 0 16px 10px 0 rgba(0,0,0,0.14), 0 11px 18px 0 rgba(0,0,0,0.12), 0 13px 5px -1px rgba(0,0,0,0.2);
+    //left: 0em;
 
   }
 
   &:not(:hover).collapsed {
     padding: 1em;
 
-    .item {
+    nav .item {
       border-radius: $noteep-radius;
       padding-left: 0;
 
@@ -59,8 +38,71 @@ nav {
         padding: 0;
       }
     }
+
+    footer {
+      padding: 0;
+      justify-content: center;
+
+      .trim-text {
+        overflow: hidden;
+        width: 0;
+      }
+    }
   }
 
+}
+
+aside nav {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
 
 
+  .item {
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    margin: .15em 0;
+    cursor: pointer;
+    border-bottom-right-radius: $noteep-radius;
+    border-top-right-radius: $noteep-radius;
+    height: 2em;
+    transition-duration: 250ms;
+    transition-property: width, box-shadowm, opacity;
+
+    .icon-btn {
+      svg {
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+
+    .text {
+      transition-duration: 150ms;
+      transition-property: width, box-shadowm, opacity;
+      width: 10em;
+      padding-left: 1.25em;
+      opacity: 1;
+      overflow: visible;
+    }
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &.active {
+      background-color: $active-color;
+    }
+
+  }
+
+}
+
+aside footer {
+  height: 4em;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: min-content;
+  padding: 0 .85em;
 }

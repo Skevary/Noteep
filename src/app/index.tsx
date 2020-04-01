@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import TopBar from './top-bar/top-bar';
 import SideBar from "./sidebar/sidebar";
-import {Link, NoteView, Sidebar, Theme} from "./top-bar/model";
+import {Link, NoteView, Sidebar, Theme} from "./model";
 import {APP_LINKS} from "./shared";
 
 function usePrevious(value: any) {
@@ -66,21 +66,15 @@ export default () => {
             changeColorTheme={v => setColorTheme(v)}
         />
 
-        <aside>
-            <SideBar
-                sideBar={sideBar}
-                links={links}
-                activeLink={activeLink}
-                changeActiveLink={v => setActiveLink(v)}
-            />
+        <SideBar
+            sideBar={sideBar}
+            links={links}
+            activeLink={activeLink}
+            changeActiveLink={v => setActiveLink(v)}
+        />
 
-            <footer>
 
-            </footer>
-        </aside>
-
-        <main>
-        </main>
+        <main></main>
 
     </>);
 }

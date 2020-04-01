@@ -1,5 +1,5 @@
 import React from "react";
-import {TopBarProps} from "./model";
+import {TopBarProps} from "../model";
 import Header from "./header";
 import SearchBar from "./search";
 import SideBarButton from "./sidebar-btn";

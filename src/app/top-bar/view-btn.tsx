@@ -1,5 +1,5 @@
 import React from "react";
-import {Icon, TopBarProps} from "./model";
+import {Icon, TopBarProps} from "../model";
 import SvgIcon from "../svg-icon";
 
 export default function ViewModeButton({noteView: view, changeNoteView}: TopBarProps) {

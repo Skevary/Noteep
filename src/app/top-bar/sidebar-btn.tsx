@@ -1,5 +1,5 @@
 import React from "react";
-import {TopBarProps} from "./model";
+import {TopBarProps} from "../model";
 import SvgIcon from "../svg-icon";
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "../top-bar/model";
+import {Link} from "../model";
 
 export const APP_LINKS: Link[] = [
     {
