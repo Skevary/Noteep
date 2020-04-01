@@ -9,16 +9,9 @@
   fill: #252526;
 }
 
-/* ==========================================
-Single-colored icons can be modified like so:
-.i-name {
-  font-size: 32px;
-  color: red;
-}
-========================================== */
-
 svg {
-  width: 2em;
-  height: 2em;
   fill: $noteep-color;
+
+  width: 1.5em;
+  height: 1.5em;
 }

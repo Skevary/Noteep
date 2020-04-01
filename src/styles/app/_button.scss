@@ -1,0 +1,33 @@
+button.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  //padding: .25em;
+  cursor: pointer;
+  transition: opacity .218s linear,visibility 0s linear;
+  opacity: .54;
+  width: 2.5em;
+  height: 2.5em;
+
+
+  &:hover {
+    opacity: .87;
+    background-color: rgba(154, 160, 166, 0.157);
+  }
+}
+
+span.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  transition: background-color .218s linear;
+  background-color: transparent;
+  &:hover {
+    //opacity: .9;
+    //background-color: rgba(154, 160, 166, 0.157);
+  }
+}

@@ -1,4 +1,8 @@
 body.dark {
+  --noteep-brand: #007acc;
+  --noteep-brand-light: #569CD6;
+  --active-color: rgba(0, 122, 204, 0.65);
+
   --noteep-background: #1e1e1e;
   --noteep-foreground: #d4d4d4;
 
@@ -6,6 +10,7 @@ body.dark {
 
   --menu-background: #252526;
   --menu-foreground: #cccccc;
+  --menu-hover-color: rgba(166, 166, 166, 0.25);
 
   --sidebar-title-foreground: #bbbbbb;
 }

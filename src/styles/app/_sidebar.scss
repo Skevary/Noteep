@@ -1,0 +1,66 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  padding: 1em 0;
+  //background-color: $menu-bg-color;
+  .item {
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    margin: .15em 0;
+    cursor: pointer;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 2em;
+
+    .icon-btn {
+      svg {
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+
+    .text {
+      width: 10em;
+      padding-left: 1.25em;
+      opacity: 1;
+      overflow: visible;
+    }
+
+
+    &:hover {
+      background-color: $menu-hover;
+
+      .icon-btn {
+        svg {
+          //fill: greenyellow;
+        }
+      }
+    }
+
+    &.active {
+      background-color: $active-color;
+    }
+
+  }
+
+  &:not(:hover).collapsed {
+    padding: 1em;
+
+    .item {
+      border-radius: 50%;
+      padding-left: 0;
+
+      .text {
+        width: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+      }
+    }
+  }
+
+
+
+}

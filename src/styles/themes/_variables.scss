@@ -1,9 +1,13 @@
 /* COLORS */
+$noteep-brand: var(--noteep-brand);
+$noteep-brand-light: var(--noteep-brand-light);
 
-  $noteep-bg-color: var(--noteep-background);
-  $noteep-color: var(--noteep-foreground);
+$noteep-bg-color: var(--noteep-background);
+$noteep-color: var(--noteep-foreground);
 
-  $placeholder-color: var(--placeholder-foreground);
+$placeholder-color: var(--placeholder-foreground);
 
-  $menu-bg-color: var(--menu-background);
-  $menu-color: var(--menu-foreground);
+$active-color: var(--active-color);
+$menu-hover: var(--menu-hover-color);
+$menu-bg-color: var(--menu-background);
+$menu-color: var(--menu-foreground);
