@@ -6,8 +6,10 @@ import NavBar from "./navbar";
 export default function SideBar(props: SideBarProps) {
     return (
         <aside className={props.sideBar}>
-            <NavBar {...props}/>
-            <Footer/>
+            <div className="aside-wrapper">
+                <NavBar {...props}/>
+                <Footer/>
+            </div>
         </aside>
     )
 }
