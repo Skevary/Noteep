@@ -1,33 +1,48 @@
-button.icon-btn {
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
-  //padding: .25em;
+  border-radius: $noteep-radius;
   cursor: pointer;
-  transition: opacity .218s linear,visibility 0s linear;
-  opacity: .54;
+
+  background-color: transparent;
+  transition: opacity .218s linear;
+}
+
+button.icon-btn {
+  @extend .btn;
+
   width: 2.5em;
   height: 2.5em;
-
+  opacity: .5;
 
   &:hover {
-    opacity: .87;
-    background-color: rgba(154, 160, 166, 0.157);
+    opacity: .9;
+    background-color: $hover-color;
   }
 }
 
 span.icon-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  @extend .btn;
+
   width: 2em;
   height: 2em;
-  transition: background-color .218s linear;
-  background-color: transparent;
+
   &:hover {
     //opacity: .9;
     //background-color: rgba(154, 160, 166, 0.157);
+  }
+}
+
+
+.embedded-btn {
+  @extend .icon-btn;
+  position: absolute;
+  padding: 0 .15em;
+
+  svg {
+    fill: var(--menu-background);
+    width: 1.25em;
+    height: 1.25em;
   }
 }

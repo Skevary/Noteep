@@ -1,35 +1,34 @@
 import React from "react";
-import {Bookmarks, Box, Light, Pencil, Trash} from "../icons";
 import {Link} from "../top-bar/model";
 
 export const APP_LINKS: Link[] = [
     {
-        icon: <Light/>,
+        icon: 'Light',
         title: 'Notes',
         items: 0
     },
     {
-        icon: <Bookmarks/>,
+        icon: 'Bookmarks',
         title: 'Custom Label',
         items: 0
     },
     {
-        icon: <Bookmarks/>,
+        icon: 'Bookmarks',
         title: 'Bookmarks',
         items: 0
     },
     {
-        icon: <Pencil/>,
+        icon: 'Pencil',
         title: 'Edit labels',
         items: 0
     },
     {
-        icon: <Box/>,
+        icon: 'Box',
         title: 'Archive',
         items: 0
     },
     {
-        icon: <Trash/>,
+        icon: 'Trash',
         title: 'Trash',
         items: 0
     }

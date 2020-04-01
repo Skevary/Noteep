@@ -12,7 +12,8 @@ import {
 } from 'draft-js';
 
 import {
-    BLOCK_TYPES, INLINE_STYLES,
+    BLOCK_TYPES,
+    INLINE_STYLES,
     generateUUID
 } from "../shared";
 

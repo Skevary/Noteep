@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React from "react";
 import {TopBarProps} from "./model";
 import Header from "./header";
 import SearchBar from "./search";
-import {Settings, Update} from "../icons";
 import SideBarButton from "./sidebar-btn";
 import ColorThemeButton from "./theme-btn";
 import ViewModeButton from "./view-btn";
+import SvgIcon from "../svg-icon";
 
 
 export default function TopBar(props: TopBarProps) {
@@ -20,14 +20,14 @@ export default function TopBar(props: TopBarProps) {
 
         <div className={'inline-wrapper'}>
             <button className={'icon-btn'}>
-                <Update/>
+                <SvgIcon icon={'Update'} />
             </button>
 
             <ViewModeButton {...props} />
             <ColorThemeButton {...props} />
 
             <button className={'icon-btn'}>
-                <Settings style={{width: '1.75em', height: '1.75em'}}/>
+                <SvgIcon icon={'Settings'} style={{width: '1.75em', height: '1.75em'}} />
             </button>
 
             <button className={'profile'}>

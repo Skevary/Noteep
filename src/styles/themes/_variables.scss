@@ -8,6 +8,10 @@ $noteep-color: var(--noteep-foreground);
 $placeholder-color: var(--placeholder-foreground);
 
 $active-color: var(--active-color);
-$menu-hover: var(--menu-hover-color);
+$hover-color: var(--hover-color);
 $menu-bg-color: var(--menu-background);
 $menu-color: var(--menu-foreground);
+
+/* RADIUS */
+
+$noteep-radius: 4px;

@@ -10,8 +10,8 @@ nav {
     padding-left: 1em;
     margin: .15em 0;
     cursor: pointer;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
+    border-bottom-right-radius: $noteep-radius;
+    border-top-right-radius: $noteep-radius;
     height: 2em;
 
     .icon-btn {
@@ -30,7 +30,7 @@ nav {
 
 
     &:hover {
-      background-color: $menu-hover;
+      background-color: $hover-color;
 
       .icon-btn {
         svg {
@@ -49,7 +49,7 @@ nav {
     padding: 1em;
 
     .item {
-      border-radius: 50%;
+      border-radius: $noteep-radius;
       padding-left: 0;
 
       .text {

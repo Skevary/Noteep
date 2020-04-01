@@ -3,7 +3,7 @@ export type Theme = 'light' | 'dark';
 export type NoteView = 'list' | 'tiled';
 
 export type Link = {
-    icon: JSX.Element;
+    icon: Icon;
     title: string;
     items: number;
 }
@@ -34,6 +34,44 @@ export type SideBarProps = {
     changeActiveLink: (v: number) => void;
 }
 
-export type MenuButton = {
-    toggleSideBar: (val: boolean) => void;
-}
+export type Icon = 'Bar'
+    | 'BookmarkAlt'
+    | 'Bookmarks'
+    | 'BoxAlt'
+    | 'Box'
+    | 'Cancel'
+    | 'CircleChecked'
+    | 'CirclePlus'
+    | 'Clock'
+    | 'Code'
+    | 'Collapse'
+    | 'Contrast'
+    | 'Cross'
+    | 'Day'
+    | 'DeleteBin'
+    | 'File'
+    | 'Folder'
+    | 'HealthData'
+    | 'LightOn'
+    | 'Light'
+    | 'LightbulbSolid'
+    | 'Lock'
+    | 'Logo'
+    | 'Night'
+    | 'OpenedFolder'
+    | 'Padlock'
+    | 'PaintPlate'
+    | 'Pen'
+    | 'Pencil'
+    | 'Picture'
+    | 'Pin'
+    | 'Redo'
+    | 'SaveClose'
+    | 'Search'
+    | 'Settings'
+    | 'TickBox'
+    | 'Trash'
+    | 'Undo'
+    | 'Unpin'
+    | 'Update'
+    | 'ViewHeadline';

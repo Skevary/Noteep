@@ -1,15 +1,17 @@
 import React from "react";
-import {Day, Night} from "../icons";
-import {TopBarProps} from "./model";
+import {Icon, TopBarProps} from "./model";
+import SvgIcon from "../svg-icon";
 
 export default function ColorThemeButton({colorTheme: color, changeColorTheme}: TopBarProps) {
+    const newState = color === 'light' ? 'dark' : 'light';
+    const icon: Icon = color === 'light' ? 'Night' : 'Day';
 
     return (
         <button
             className={'icon-btn'}
-            title={'Change color theme'}
-            onClick={() => changeColorTheme(color === 'light' ? 'dark' : 'light')}>
-            {color === 'light' ? <Day/> : <Night/>}
+            title={`Change color theme to ${newState}`}
+            onClick={() => changeColorTheme(newState)}>
+            <SvgIcon icon={icon} />
         </button>
     )
 }

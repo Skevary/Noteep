@@ -19,7 +19,7 @@ header {
 
     .icon-btn {
       svg {
-        fill: $noteep-brand;
+        fill: $noteep-brand-light;
         width: 2em;
         height: 2em;
       }
@@ -37,16 +37,6 @@ header {
     align-items: center;
     position: relative;
 
-    .icon-btn {
-      position: absolute;
-      padding: 0 .15em;
-
-      svg {
-        fill: var(--menu-background);
-        width: 1.25em;
-        height: 1.25em;
-      }
-    }
 
     input {
       height: 2em;

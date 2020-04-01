@@ -1,16 +1,14 @@
 import React, {useState} from "react";
-import {Cross, Search} from "../icons";
-
+import SvgIcon from "../svg-icon";
 
 type Props = {}
 
 export default function SearchBar(props: Props) {
     const [input, setInput] = useState<string>('');
 
-
     return (<div className={'Search'}>
-        <span className="icon-btn" style={{left: 0}}>
-            <Search />
+        <span className="embedded-btn" style={{left: 0}}>
+            <SvgIcon icon={'Search'} />
         </span>
 
         <input
@@ -19,12 +17,11 @@ export default function SearchBar(props: Props) {
             placeholder={'Search...'}
         />
 
-        {input &&
-        <button
-            className="icon-btn"
+        {input && <button
+            className="embedded-btn"
             style={{right: 0}}
-            onClick={() => setInput('')} >
-            <Cross />
+            onClick={() => setInput('')}>
+            <SvgIcon icon={'Cross'} />
         </button>}
     </div>)
 }

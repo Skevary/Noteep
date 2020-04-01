@@ -1,15 +1,17 @@
 import React from "react";
-import {TopBarProps} from "./model";
-import {Day, HealthData, Night, ViewHeadline} from "../icons";
+import {Icon, TopBarProps} from "./model";
+import SvgIcon from "../svg-icon";
 
 export default function ViewModeButton({noteView: view, changeNoteView}: TopBarProps) {
+    const newState = view === 'tiled' ? 'list' : 'tiled';
+    const icon: Icon = view === 'tiled' ? 'ViewHeadline' : 'HealthData';
 
     return (
         <button
             className={'icon-btn'}
-            title={'Change notes view mode'}
-            onClick={() => changeNoteView(view === 'tiled' ? 'list' : 'tiled')}>
-            {view === 'tiled' ? <ViewHeadline /> : <HealthData />}
+            title={`Change view mode to ${newState}`}
+            onClick={() => changeNoteView(newState)}>
+            <SvgIcon icon={icon} />
         </button>
     )
 }

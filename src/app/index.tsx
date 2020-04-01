@@ -38,15 +38,15 @@ export default () => {
     const prevColorTheme = usePrevious(colorTheme);
 
     useEffect(() => {
-        if(prevSideBar !== sideBar) {
+        if (prevSideBar !== sideBar) {
             localStorage.setItem('sideBar', sideBar);
         }
 
-        if(prevNoteView !== noteView) {
+        if (prevNoteView !== noteView) {
             localStorage.setItem('noteView', noteView)
         }
 
-        if(prevColorTheme !== colorTheme) {
+        if (prevColorTheme !== colorTheme) {
             localStorage.setItem('colorTheme', colorTheme);
             document.body.className = colorTheme;
         }

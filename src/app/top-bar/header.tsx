@@ -1,20 +1,22 @@
 import React from "react";
-import {Logo} from "../icons";
-import {Link, TopBarProps} from "./model";
+import {TopBarProps} from "./model";
+import SvgIcon from "../svg-icon";
 
 export default function Header({links, activeLink}: TopBarProps) {
-
-    const getText = () => activeLink === 0 ? 'Noteep' : links[activeLink].title;
+    const icon = activeLink === 0 ? 'Logo' : links[activeLink].icon;
+    const name = activeLink === 0 ? 'Noteep' : links[activeLink].title;
 
     return (
         <div className="Header">
             <span className="icon-btn">
-                {activeLink === 0 ? <Logo /> : links[activeLink].icon }
+                <SvgIcon icon={icon}/>
             </span>
 
-            <span className="title trim-text" title={getText()}>
-                {getText()}
-            </span>
+            <span
+                className="title trim-text"
+                children={name}
+                title={name}
+            />
         </div>
     )
 }
