@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import TopBar from './top-bar/top-bar';
 import SideBar from "./sidebar/sidebar";
+import EmptyCard from "./empty-card";
 import {Link, NoteView, Sidebar, Theme} from "./model";
 import {APP_LINKS} from "./shared";
 
@@ -74,7 +75,13 @@ export default () => {
         />
 
 
-        <main></main>
+        <main>
+            {!links[activeLink].items &&
+            <EmptyCard
+                links={links}
+                activeLink={activeLink}
+            />}
+        </main>
 
     </>);
 }

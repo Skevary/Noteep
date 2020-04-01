@@ -3,6 +3,7 @@ export type Theme = 'light' | 'dark';
 export type NoteView = 'list' | 'tiled';
 
 export type Link = {
+    id: string;
     icon: Icon;
     title: string;
     items: number;

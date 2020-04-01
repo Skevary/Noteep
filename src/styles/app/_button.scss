@@ -62,7 +62,6 @@ a.icon-btn {
 .btn-row {
   @extend .icon-btn;
   width: fit-content !important;
-  padding: 0 .25em;
 
   .wrapper {
     display: flex;
@@ -75,5 +74,4 @@ a.icon-btn {
       margin-right: .25em;
     }
   }
-
 }
