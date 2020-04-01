@@ -1,8 +1,10 @@
 @import '~@csstools/normalize.css';
 
 @import "themes";
+@import 'variables';
 @import "mixins";
-@import "reset";  // restyling of native elements
+@import "override";  // restyling of native elements
+/* App constant set declaration  */
 
 @import "app/index";
 
