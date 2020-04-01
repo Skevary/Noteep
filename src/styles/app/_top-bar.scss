@@ -1,0 +1,74 @@
+header {
+  grid-area: header;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: .5em 1em;
+
+  //background-color: $menu-bg-color;
+  border-bottom: 1px solid var(--noteep-foreground);
+
+  .Header {
+    display: flex;
+    align-items: center;
+    margin-left: .5em;
+    margin-right: 1em !important;
+    width: 10em;
+
+    .icon-btn {
+      svg {
+        fill: $noteep-brand;
+        width: 2em;
+        height: 2em;
+      }
+    }
+
+    .title {
+      margin-left: .25em;
+      font-size: 1.25em;
+    }
+  }
+
+
+  .Search {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .icon-btn {
+      position: absolute;
+      padding: 0 .15em;
+
+      svg {
+        fill: var(--menu-background);
+        width: 1.25em;
+        height: 1.25em;
+      }
+    }
+
+    input {
+      height: 2em;
+      padding: 0 2.5em;
+      background-color: var(--menu-foreground);
+    }
+
+  }
+
+
+  .profile {
+    margin-left: 1em !important;
+    margin-right: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    width: 2.75em;
+    height: 2.75em;
+    border-radius: 50%;
+    background-color: var(--noteep-foreground);
+    color: var(--noteep-brand);
+  }
+
+}

@@ -1,6 +1,7 @@
 @import "note";
 @import "button";
 @import "top-bar";
+@import "sidebar";
 @import "icons";
 
 /* App root */
@@ -8,26 +9,37 @@
   display: grid;
   grid: 'header header' auto
         'aside main' 1fr
-        / 15em 1fr;
+        / auto 1fr;
 
-  grid-gap: 10px;
   height: 100vh;
+
+  .inline-wrapper {
+    display: flex;
+    align-items: center;
+
+    & > *{
+      margin-right: .25em;
+    }
+
+  }
 
 
   aside {
     grid-area: aside;
-    background-color: $menu-bg-color;
+    display: flex;
+    flex-direction: column;
 
     nav {
     }
 
     footer {
+      height: 5em;
     }
   }
 
   main {
     grid-area: main;
-    background-color: $menu-color;
+    //background-color: $menu-bg-color;
     overflow-x: hidden;
     overflow-y: auto;
   }
