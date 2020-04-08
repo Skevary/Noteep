@@ -1,14 +1,20 @@
 header {
-  grid-area: header;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   padding: .5em 1em;
-
-  //background-color: $menu-bg-color;
   border-bottom: 1px solid var(--noteep-foreground);
+
+  .inline-wrapper {
+    display: flex;
+    align-items: center;
+
+    & > *{
+      margin-right: .25em;
+    }
+
+  }
 
   .Header {
     display: flex;
@@ -31,7 +37,6 @@ header {
     }
   }
 
-
   .Search {
     display: flex;
     align-items: center;
@@ -39,13 +44,12 @@ header {
 
 
     input {
-      height: 2em;
+      height: 1.75em;
       padding: 0 2.5em;
       background-color: var(--menu-foreground);
     }
 
   }
-
 
   .profile {
     margin-left: 1em !important;

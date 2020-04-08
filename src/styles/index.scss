@@ -1,12 +1,12 @@
 @import '~@csstools/normalize.css';
-
+@import "~draft-js/dist/Draft.css";
 @import "themes";
-@import 'variables';
+@import 'variables'; // app constant set declaration
 @import "mixins";
 @import "override";  // restyling of native elements
-/* App constant set declaration  */
 
-@import "app/index";
+@import "container"; // layout & included elements
+@import "components"; // others components
 
 .trim-text {
   white-space: nowrap;

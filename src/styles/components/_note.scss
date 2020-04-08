@@ -1,26 +1,42 @@
 .note-editor {
-  margin: 1.5em 1em;
-  width: 40em;
-  max-width: fit-content;
+  margin: 3em 1em;
+  width: 30em;
+  max-width: 80%;
   max-height: fit-content;
   border-radius: $noteep-radius;
   padding: .5em;
-  background-color: #202124;
-  border: 1px solid #5f6368;
+  background-color: $menu-bg-color;
+  border: 1px solid $placeholder-color;
+  overflow: hidden;
+  height: 2em;
+
+  &.open {
+    height: fit-content;
+  }
 
   .row {
     display: flex;
     align-items: center;
-
   }
 
   .editor-controls {
-    font-family: Roboto,Arial,sans-serif;
-    font-size: 14px;
+    display: flex;
+    font-size: .65em;
     margin-bottom: 5px;
     user-select: none;
     padding: 0 .5em;
     margin-right: 0.25em;
+
+    .icon-btn {
+      width: 1.5em;
+      height: 1.5em;
+      opacity: .75;
+      margin: .1em .25em;
+      svg {
+        width: 1.25em;
+        height: 1.25em;
+      }
+    }
   }
 
   .bottom-controls {
@@ -51,9 +67,9 @@
   .DraftEditor-root {
     cursor: text;
     white-space: pre;
-    border-top: 1px solid #5f6368;
+    //border-top: 1px solid #5f6368;
     padding: .5em;
-    border-bottom: 1px solid #5f6368;
+    //border-bottom: 1px solid #5f6368;
 
     .DraftEditor-editorContainer {
       min-width: 15em;
@@ -71,16 +87,14 @@
   }
 
   blockquote {
-    border-left: 5px solid #5890ff;
-    font-family: Roboto,Arial,sans-serif;
+    border-left: 5px solid var(--noteep-brand-light);
     margin: 16px 0;
     padding: 10px 20px;
-    background-color: rgba(101, 101, 101, 0.5);
+    background-color: rgba(101, 101, 101, 0.15);
   }
 
   .public-DraftStyleDefault-pre {
     background-color: rgba(101, 101, 101, 0.5);
-    font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
     font-size: 16px;
     padding: 20px;
   }

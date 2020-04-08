@@ -1,0 +1,25 @@
+@import 'topbar'; // <header/> nested: Header, Search, profile
+@import 'sidebar'; // <aside/> nested: <nav/>, <footer/>
+@import 'main-content'; // <main/>
+
+/** App Root **/
+
+#noteep {
+  display: grid;
+  height: 100vh;
+  grid: 'header header' auto
+        'aside main' 1fr
+        / auto 1fr;
+
+  header {
+    grid-area: header;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  main {
+    grid-area: main;
+  }
+}

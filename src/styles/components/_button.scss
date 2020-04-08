@@ -14,7 +14,7 @@ button.icon-btn {
 
   width: 2.5em;
   height: 2.5em;
-  opacity: .5;
+  opacity: .75;
 
   &:hover {
     opacity: .9;
@@ -43,6 +43,12 @@ a.icon-btn {
   &:hover {
     opacity: .9;
     background-color: $hover-color;
+  }
+}
+
+.icon-btn.active {
+  svg {
+    fill: $noteep-brand;
   }
 }
 
