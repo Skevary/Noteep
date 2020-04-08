@@ -24,8 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "icon:generate": "svgr src/assets/icons/ -d src/app/icons/  --typescript --template ./svgrTypescript.js",
-    "icon:clear": "rm -rf src/app/icons/*"
+    "icon:generate": "svgr src/assets/icons/ -d src/app/components/icons/  --typescript --template ./svgrTypescript.js",
+    "icon:clear": "rm -rf src/app/components/icons/*"
   },
   "eslintConfig": {
     "extends": "react-app"
