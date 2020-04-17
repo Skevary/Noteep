@@ -1,7 +1,5 @@
 import React, {useState, useRef} from "react";
 
-import SvgIcon from "./_svg-icon";
-
 import {
     Editor,
     EditorState,
@@ -16,13 +14,11 @@ import {
     ControlsProps,
     EditorButtonProps,
     NoteEditorProps,
-    SyntheticKeyboardEvent
-} from "../models";
-
-import {
     BLOCK_TYPES,
     INLINE_STYLES
-} from "../utils";
+} from "../libs";
+
+import {Icon} from "./icon";
 
 
 const EditorButton = (props: EditorButtonProps) => {
@@ -50,7 +46,7 @@ const BlockStyleControls = ({editorState, onToggle}: ControlsProps) => {
             key={label}
             active={style === blockType}
             label={label}
-            icon={<SvgIcon icon={icon}/>}
+            icon={<Icon name={icon}/>}
             onToggle={onToggle}
             style={style}
         />
@@ -71,7 +67,7 @@ const InlineStyleControls = ({editorState, onToggle}: ControlsProps) => {
             key={label}
             active={currentStyle.has(style)}
             label={label}
-            icon={<SvgIcon icon={icon}/>}
+            icon={<Icon name={icon}/>}
             onToggle={onToggle}
             style={style}
         />
@@ -98,7 +94,7 @@ export default ({data, winOpen, handleNote, changeWinState}: NoteEditorProps) =>
         return 'not-handled';
     };
 
-    const mapKeyToEditorCommand = (e: SyntheticKeyboardEvent) => {
+    const mapKeyToEditorCommand = (e: any) => {
         return getDefaultKeyBinding(e);
     };
 
@@ -109,7 +105,7 @@ export default ({data, winOpen, handleNote, changeWinState}: NoteEditorProps) =>
 
     return (
         <div className={winOpen ? 'note-editor open' : 'note-editor'}
-             onClick={e =>  changeWinState(true)}>
+             onClick={e => changeWinState(true)}>
 
             {  winOpen &&
             <div className="row">

@@ -1,5 +1,5 @@
-import React from "react";
-import {EditorCtrl, Link} from "../models";
+import {DraftBlockType, EditorState, RawDraftContentState} from "draft-js";
+import {SvgIconName} from "../components/icon";
 
 export const APP_LINKS: Link[] = [
     {
@@ -55,3 +55,49 @@ export const INLINE_STYLES: EditorCtrl[] = [
     {label: 'Underline', style: 'UNDERLINE', icon: 'Underline'},
     {label: 'Monospace', style: 'CODE', icon: 'Code'},
 ];
+
+export type EditorCtrl = {
+    label: string;
+    style: string;
+    icon: SvgIconName
+}
+
+
+export type Link = {
+    id: string;
+    icon: SvgIconName;
+    title: string;
+    items: number;
+}
+
+
+export type EditorButtonProps = {
+    active: boolean;
+    label: string;
+    style: string;
+    icon: any;
+    onToggle: (inlineStyle: DraftBlockType) => any
+}
+
+export type ControlsProps = {
+    editorState: EditorState;
+    onToggle: (inlineStyle: DraftBlockType) => any
+};
+
+
+export type NoteEditorProps = {
+    data?: NoteInstance | null;
+    winOpen: boolean;
+    handleNote?: (val: NoteInstance) => void;
+    changeWinState: (val: boolean) => any;
+}
+
+export interface NoteInstance {
+    id: string;
+    created: number;
+    changed: number;
+    selected: boolean;
+    inArchive: boolean;
+    inTrashed: boolean;
+    editorState: RawDraftContentState;
+}

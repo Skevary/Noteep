@@ -1,4 +1,16 @@
-import React from 'react';
-import Layout from "./layout";
+import React, {FC} from 'react';
+import {TopBar, Sidebar, Main} from "./layout";
+import {Provider} from "react-redux";
+import store from "./store";
 
-export default () => <Layout/>;
+const App: FC = () => {
+    return (
+        <Provider store={store}>
+            <TopBar/>
+            <Sidebar/>
+            <Main/>
+        </Provider>
+    )
+};
+
+export default App;

@@ -1,3 +1,2 @@
-export * from './icons';
-export {default as SvgIcon} from './_svg-icon';
-export {default as NoteEditor} from './_note-editor';
+export {Icon} from './icon';
+export {default as NoteEditor} from './editor';

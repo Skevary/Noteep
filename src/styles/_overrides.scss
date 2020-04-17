@@ -1,18 +1,21 @@
 
 body {
-  background-color: $noteep-bg-color;
-  color: $noteep-color;
+  background-color: var(--noteep-background);
+  color: var(--noteep-foreground);
   padding: 0;
   margin: 0;
   min-width: 360px;
-  font-family: Consolas, 'Courier New', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+
   //font-size: 14px;
-  //-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif
+}
+
+main {
+
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family: Consolas, 'Courier New', monospace;
 }
 
 button {
@@ -31,17 +34,16 @@ span {
 input {
   outline: none;
   border: none;
-  border-radius: $noteep-radius;
+  border-radius: var(--main-radius);
   font-size: 16px;
 
   &:focus {
-    box-shadow: 0 0 1px 2px $noteep-brand;
+    box-shadow: 0 0 1px 2px var(--noteep-brand);
   }
 }
 
 svg {
-  fill: $noteep-color;
-
+  fill: var(--noteep-foreground);
   width: 1.5em;
   height: 1.5em;
 }
@@ -49,5 +51,5 @@ svg {
 #noteep .react-loading-skeleton {
   background-color: #569CD6;
   background-image: linear-gradient( 90deg,#569CD6,#007acc,#569CD6);
-  border-radius: $noteep-radius;
+  border-radius: var(--main-radius);
 }

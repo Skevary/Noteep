@@ -1,8 +1,8 @@
-aside {
+aside.Menu {
   position: relative;
 
-  .aside-wrapper {
-    background-color: $noteep-bg-color;
+  .wrapper {
+    background-color: var(--noteep-background);
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 0 0;
@@ -28,8 +28,8 @@ aside {
       cursor: pointer;
       height: 2em;
 
-      border-bottom-right-radius: $noteep-radius;
-      border-top-right-radius: $noteep-radius;
+      border-bottom-right-radius: var(--main-radius);
+      border-top-right-radius: var(--main-radius);
       transition-duration: 250ms;
       transition-property: width, box-shadowm, opacity;
       transition-timing-function: linear;
@@ -55,11 +55,11 @@ aside {
 
 
       &:hover {
-        background-color: $hover-color;
+        background-color: var(--hover-color);
       }
 
       &.active {
-        background-color: $active-color;
+        background-color: var(--active-color);
       }
     }
   }
@@ -67,9 +67,10 @@ aside {
 
 }
 
-aside.collapsed {
+aside.Menu.collapsed {
 
-  .aside-wrapper {
+  .wrapper {
+    z-index: 4;
     position: absolute;
   }
 
@@ -77,7 +78,7 @@ aside.collapsed {
     nav, footer {
       .item {
         margin: .15em 1em;
-        border-radius: $noteep-radius;
+        border-radius: var(--main-radius);
 
         .icon-btn {
           padding: 0 0;
@@ -93,10 +94,10 @@ aside.collapsed {
   }
 
   &:hover {
-    .aside-wrapper {
-      box-shadow: 0 16px 10px 0 rgba(0, 0, 0, 0.14),
-      0 11px 18px 0 rgba(0, 0, 0, 0.12),
-      0 13px 5px -1px rgba(0, 0, 0, 0.2);
+    .wrapper {
+      //box-shadow: 0 16px 10px 0 rgba(0, 0, 0, 0.05),
+      //0 11px 18px 0 rgba(0, 0, 0, 0.03),
+      //0 13px 5px -1px rgba(0, 0, 0, 0.01);
     }
   }
 }

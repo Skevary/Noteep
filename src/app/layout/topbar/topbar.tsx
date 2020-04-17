@@ -1,51 +1,146 @@
-import React from "react";
-import {Link, NoteView, Sidebar, Theme} from "../../models";
-import Header from "./header";
-import SearchBar from "./search";
-import SideBarButton from "./sidebar-btn";
-import ColorThemeButton from "./theme-btn";
-import ViewModeButton from "./view-btn";
-import {SvgIcon} from "../../components";
+import React, {FC, useEffect,useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
-export interface TopBarProps {
-    sideBar: Sidebar
-    noteView: NoteView;
-    colorTheme: Theme;
-    links: Link[];
-    activeLink: number;
-    changeSideBar: (v: Sidebar) => void;
-    changeNoteView: (v: NoteView) => void;
-    changeColorTheme: (v: Theme) => void;
-}
+import {actions} from "../../store";
+import {RootState} from "../../store/types";
+import {Icon} from "../../components";
 
-export default (props: TopBarProps) => {
+import './topbar.scss';
 
-    return (<header>
+const TopBar: FC = () => {
+    console.log('From TopBar');
 
-        <div className={'inline-wrapper'}>
-            <SideBarButton {...props} />
-            <Header {...props} />
-            <SearchBar/>
+    return (
+        <header className='TopBar'>
+            <div className='wrapper'>
+                <Burger/>
+                <Brand/>
+                <Search/>
+            </div>
+            <div className='wrapper'>
+                <Update/>
+                <ViewMode/>
+                <Theme/>
+                <Settings/>
+                <UserProfile/>
+            </div>
+        </header>
+    )
+};
+
+const Burger: FC = () => {
+    const sidebar = useSelector(({app}: RootState) => app.sidebar);
+    const dispatch = useDispatch();
+    console.log('From Burger');
+
+    return (
+        <button
+            className={`icon-btn`}
+            title={`Sidebar are ${sidebar}`}
+            onClick={() => dispatch(actions.app.toggleSidebar())}>
+            <Icon name='Bar'/>
+        </button>
+    )
+};
+
+const Brand: FC = () => {
+    console.log('From Brand');
+
+    return (
+        <div className="Brand" title='Noteep'>
+            <span className="icon-btn md">
+                <Icon name='Logo'/>
+            </span>
+
+            <span className="title trim-text">
+                {'Noteep'}
+            </span>
         </div>
+    )
+};
 
-        <div className={'inline-wrapper'} >
-            <button className={'icon-btn'}>
-                <SvgIcon icon={'Update'} />
-            </button>
+const Search: FC = () => {
+    const [input, setInput] = useState('');
+    console.log('From Search');
 
-            <ViewModeButton {...props} />
-            <ColorThemeButton {...props} />
+    return (
+        <div className='Search'>
+            <span className='embedded-btn' style={{left: 0}}>
+                <Icon name='Search'/>
+            </span>
 
-            <button className={'icon-btn'}>
-                <SvgIcon icon={'Settings'} style={{width: '1.75em', height: '1.75em'}} />
-            </button>
+            <input
+                value={input}
+                onChange={e => setInput(e.target.value)}
+                placeholder='Search...'
+            />
 
-            <button className={'profile'}>
-                <span className={''} >
-                    {'L'}
-                </span>
-            </button>
+            {input && <button
+                className='embedded-btn'
+                style={{right: 0}}
+                onClick={() => setInput('')}>
+                <Icon name='Cross'/>
+            </button>}
         </div>
+    )
+};
 
-    </header>)
-}
+const Update: FC = () => {
+    return (
+        <button className='icon-btn'>
+            <Icon name='Update'/>
+        </button>
+    );
+};
+
+const ViewMode: FC = () => {
+    const dispatch = useDispatch();
+    const viewMode = useSelector(({app}: RootState) => app.viewMode);
+    console.log('From ViewMode');
+
+    return (
+        <button
+            className='icon-btn'
+            title={`Notes are displayed in ${viewMode}`}
+            onClick={() => dispatch(actions.app.toggleNoteView())}>
+            <Icon name={viewMode === 'tiles' ? 'ViewHeadline' : 'HealthData'}/>
+        </button>
+    )
+};
+
+const Theme: FC = () => {
+    const dispatch = useDispatch();
+    const theme = useSelector(({app}: RootState) => app.theme);
+    console.log('From Theme');
+
+    useEffect(() => {
+       document.body.className = theme;
+    }, [theme]);
+
+    return (
+        <button
+            className='icon-btn'
+            title={`Color theme are ${theme}`}
+            onClick={() => dispatch(actions.app.toggleTheme())}>
+            <Icon name={theme === 'light' ? 'Night' : 'Day'}/>
+        </button>
+    )
+};
+
+const Settings: FC = () => {
+    return (
+        <button className='icon-btn'>
+            <Icon name='Settings' style={{width: '1.75em', height: '1.75em'}}/>
+        </button>
+    );
+};
+
+const UserProfile: FC = () => {
+    return (
+        <button className='Profile'>
+            <span>{'L'}</span>
+        </button>
+    );
+};
+
+export default TopBar;

@@ -1,4 +1,16 @@
-export type Icon = 'Bar'
+import React, {FC, useMemo} from "react";
+import {Icons} from "../libs";
+
+interface Props extends React.SVGProps<SVGSVGElement> {
+    name: SvgIconName;
+}
+
+export const Icon: FC<Props> = React.memo(props => {
+    const InlineSvg = useMemo(() => (Icons as any)[props.name], [props.name]);
+    return <InlineSvg {...props} />
+});
+
+export type SvgIconName = 'Bar'
     | 'Blockquote'
     | 'Bold'
     | 'BookmarkAlt'
@@ -48,3 +60,4 @@ export type Icon = 'Bar'
     | 'Unpin'
     | 'Update'
     | 'ViewHeadline'
+

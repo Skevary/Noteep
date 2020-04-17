@@ -1,12 +1,9 @@
 @import '~@csstools/normalize.css';
 @import "~draft-js/dist/Draft.css";
-@import "themes";
-@import 'variables'; // app constant set declaration
-@import "mixins";
-@import "override";  // restyling of native elements
 
-@import "container"; // layout & included elements
-@import "components"; // others components
+@import "themes";
+@import "overrides";
+@import "components";
 
 .trim-text {
   white-space: nowrap;
@@ -15,48 +12,24 @@
 }
 
 
-/*
- app >
-  top bar >
-    header >
-      nav-ctrl >
-      search-bar >
-      ctrl-bar >
-  side-bar >
-    menu >
-      top-nav >
-      label-nav >
-      bottom-nav >
-  content >
-    make_noteep >
-    workspace >
-    empty-content-card >
+/** App Root **/
 
+#root {
+  display: grid;
+  height: 100vh;
+  grid: 'header header' auto
+  'aside main' 1fr
+        / auto 1fr;
 
-  footer >
+  header {
+    grid-area: header;
+  }
 
-*/
+  aside {
+    grid-area: aside;
+  }
 
-/*
-    noteep-viewer >
-      note-view
-      article-view
-
-    noteep-editor >
-      note-editor
-      article-editor
-
-     noteep-resources >
-       link
-       image
-       ?slider
-       ?comments
-
-      dynamical-tooltip >
-
-      label-manger >
-
-      svg-icon-provider >
-
-
-*/
+  main {
+    grid-area: main;
+  }
+}

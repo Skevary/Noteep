@@ -1,0 +1,34 @@
+body {
+
+  /* App variables */
+  --main-radius: 3px;
+
+  /* Theme color set declaration */
+
+  &.dark {
+    --noteep-brand: #007acc;
+    --noteep-brand-light: rgb(3, 155, 229);
+    --noteep-background: #1e1e1e;
+    --noteep-foreground: #d4d4d4;
+    --placeholder-foreground: #a6a6a6;
+    --menu-background: #252526;
+    --menu-foreground: #cccccc;
+    --hover-color: rgba(166, 166, 166, 0.15);
+    --active-color: rgba(0, 122, 204, 0.85);
+    --sidebar-title-foreground: #bbbbbb;
+  }
+
+  &.light {
+    --noteep-brand: #007acc;
+    --noteep-brand-light: #569CD6;
+    --noteep-background: #eaeaea;
+    --noteep-foreground: #000000;
+    --placeholder-foreground: #d3d3d3;
+    --menu-background: #ffffff;
+    --menu-foreground: #d6d6d6;
+    --hover-color: rgba(166, 166, 166, 0.15);
+    --active-color: rgba(0, 122, 204, 0.65);
+    --sidebar-title-foreground: #bbbbbb;
+  }
+
+}

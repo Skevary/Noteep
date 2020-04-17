@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import App from "./app";
+import './styles/index.scss';
 import * as serviceWorker from './serviceWorker';
 
-import NoteepApp from "./app";
-import './styles/index.scss';
+const DOMRoot = document.getElementById('root');
 
 ReactDOM.render(
-    <NoteepApp />,
-    document.getElementById('noteep')
+    <App/>, DOMRoot
 );
 
 // If you want your app to work offline and load faster, you can change
