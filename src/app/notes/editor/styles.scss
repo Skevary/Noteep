@@ -1,0 +1,11 @@
+@import '~draft-js/dist/Draft.css';
+
+.note_editor {
+  padding: .75em 1em;
+}
+
+.note_editor.open {
+  .DraftEditor-root, .public-DraftEditor-content {
+    min-height: 8em;
+  }
+}

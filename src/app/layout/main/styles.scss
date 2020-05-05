@@ -1,0 +1,10 @@
+.Main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin: var(--top-height) var(--border-edge) 0 var(--sidebar-width);
+  padding: .5em 1em;
+  max-width: calc(100% - (var(--sidebar-width) + var(--border-edge) * 2));
+  min-width: 200px;
+}

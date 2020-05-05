@@ -1,0 +1,83 @@
+header {
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  position: fixed;
+  //background-color: #007acc;
+  height: var(--top-height);
+  z-index: 12;
+
+  .TopBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1920px;
+    position: relative;
+    margin: 0 auto;
+:first-child {
+  flex: auto;
+}
+
+:last-child {
+  flex: 0 0 auto;
+}
+
+.wrapper {
+  padding: 0 var(--border-edge);
+  display: flex;
+  align-items: center;
+
+  & > * {
+    margin-right: .25em;
+  }
+}
+
+.Brand {
+  margin: 0 1.5em 0 0;
+
+  .Icon {
+    fill: var(--noteep-brand);
+  }
+}
+
+.Search {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  input {
+    //height: 1.75em;
+    padding: .25em 2em;
+    background-color: var(--placeholder-foreground);
+
+    &:focus {
+      background-color: var(--menu-foreground);
+    }
+  }
+
+  &:focus, &:hover {
+    input {
+      background-color: var(--menu-foreground);
+    }
+  }
+
+}
+
+.Profile {
+  margin-left: 1em !important;
+  margin-right: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background-color: var(--noteep-foreground);
+  color: var(--noteep-brand);
+}
+
+}
+
+}

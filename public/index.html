@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <meta name="description" content="Web site created using create-react-app"/>
 
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,19 +24,45 @@
       Learn how to configure a non-appSlice public URL by running `npm run build`.
     -->
     <title>Noteep - Notes Manager</title>
-  </head>
-  <body class="dark">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        #root .spinner {
+            position: absolute;
+            top: calc(100% - 50% - 2em);
+            left: calc(100% - 50% - 2em);
+            right: auto;
+            bottom: auto;
+            width: 2em;
+            height: 2em;
+            animation: spin .5s linear infinite;
+        }
+    </style>
+</head>
+<body class="dark">
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="spinner">
+        <path d="M3.175 13.775l-1.962.391c.141.704.352 1.398.629 2.063l1.846-.77C3.462 14.917 3.29 14.351 3.175 13.775zM3.167 10.264L1.205 9.879C1.069 10.572 1 11.286 1 12v.021L3 12C3 11.415 3.056 10.83 3.167 10.264zM4.502 7.02L2.838 5.91C2.44 6.507 2.099 7.147 1.825 7.813l1.85.762C3.898 8.031 4.177 7.508 4.502 7.02zM6.98 4.528L5.861 2.87c-.596.402-1.154.864-1.66 1.371l1.417 1.412C6.033 5.236 6.491 4.858 6.98 4.528zM10.215 3.178L9.824 1.217C9.118 1.357 8.424 1.57 7.76 1.848l.772 1.846C9.074 3.466 9.64 3.293 10.215 3.178zM14.107 1.21c0 0-.445-.074-.619-.097-.172-.023-.614-.071-.614-.071C12.584 1.019 11.969 1 11.969 1L12 3c.264 0 .529.015.793.038.158.014.718.091.843.114C17.832 3.928 21 7.647 21 12c0 4.963-4.038 9-9 9-2.504 0-4.872-1.053-6.562-2.855-.078-.083-.155-.166-.23-.253-.161-.185-.312-.378-.459-.577-.074-.101-.155-.198-.225-.302l-1.66 1.115c.039.058.085.111.125.168l-.006.004c.048.069.106.128.155.195.179.244 1.111 1.28 1.111 1.28C6.294 21.811 9.068 23 12 23c6.065 0 11-4.935 11-11C23 6.719 19.182 2.204 14.107 1.21z"/>
+    </svg>
+</div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
 </html>

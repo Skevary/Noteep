@@ -1,9 +1,7 @@
 @import '~@csstools/normalize.css';
-@import "~draft-js/dist/Draft.css";
 
 @import "themes";
 @import "overrides";
-@import "components";
 
 .trim-text {
   white-space: nowrap;
@@ -11,25 +9,17 @@
   text-overflow: ellipsis;
 }
 
-
-/** App Root **/
-
-#root {
-  display: grid;
-  height: 100vh;
-  grid: 'header header' auto
-  'aside main' 1fr
-        / auto 1fr;
-
-  header {
-    grid-area: header;
+.rotate:hover {
+  svg {
+    animation: spin .6s linear infinite;
   }
+}
 
-  aside {
-    grid-area: aside;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-
-  main {
-    grid-area: main;
+  100% {
+    transform: rotate(360deg);
   }
 }

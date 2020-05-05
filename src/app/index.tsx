@@ -1,16 +1,27 @@
 import React, {FC} from 'react';
-import {TopBar, Sidebar, Main} from "./layout";
-import {Provider} from "react-redux";
-import store from "./store";
+import {
+    TopBar,
+    Sidebar,
+    MainContent
+} from "./layout";
+
+import Router from "./router";
+
+import './styles.scss';
 
 const App: FC = () => {
+    console.log('@@@App rerender');
+
     return (
-        <Provider store={store}>
+        <>
             <TopBar/>
             <Sidebar/>
-            <Main/>
-        </Provider>
+            <MainContent>
+                <Router/>
+            </MainContent>
+        </>
     )
 };
+
 
 export default App;

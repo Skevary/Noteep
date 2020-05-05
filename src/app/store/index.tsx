@@ -1,29 +1,19 @@
 import {combineReducers} from 'redux'
-import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit";
+import {configureStore,  getDefaultMiddleware} from "@reduxjs/toolkit";
 
-/* Store Types */
+import core from './core';
+import posts from './posts';
 
-
-/* Store Slices */
-
-import app from './app-slice';
-import nav from './nav-slice';
-
-
-// Common Actions
 export const actions = {
-    app : app.actions,
-    nav: nav.actions
+    core: core.actions,
+    posts: posts.actions,
 };
 
-// Root Reducer
 const reducer = combineReducers({
-    app : app.reducer,
-    nav: nav.reducer
+    core: core.reducer,
+    posts: posts.reducer,
 });
 
-
-// Store Middleware
 const middleware = getDefaultMiddleware({
     immutableCheck: true,
     serializableCheck: true,
@@ -32,11 +22,13 @@ const middleware = getDefaultMiddleware({
 
 const devTools = process.env.NODE_ENV !== 'production';
 
-/* Store configuration */
-
 const store = configureStore({
-    reducer, middleware, devTools
+    reducer,
+    middleware,
+    devTools,
 });
 
+export type RootState = ReturnType<typeof reducer>;
+export type AppDispatch = typeof store.dispatch
 
 export default store;

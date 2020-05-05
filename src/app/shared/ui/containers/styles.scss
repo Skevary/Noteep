@@ -1,0 +1,22 @@
+.page_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+  min-width: 400px;
+}
+
+.posts_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  margin: 1em 0;
+}
+
+.page_block {
+  position: relative;
+  background: #fff;
+  border-radius: var(--main-radius);
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}

@@ -1,0 +1,26 @@
+/** App Root **/
+
+#root {
+  //display: grid;
+  //height: 100vh;
+  //grid: 'header header' auto 'aside main' 1fr
+  //      / auto 1fr;
+  //min-width: max-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 1920px;
+  header {
+    //display: flex;
+    //height: 3em;
+    //grid-area: header;
+  }
+
+  aside {
+    //grid-area: aside;
+  }
+
+  main {
+    //grid-area: main;
+  }
+}

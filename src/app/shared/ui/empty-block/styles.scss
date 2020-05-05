@@ -1,0 +1,19 @@
+.init_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+
+  svg.Icon {
+    width: 4em;
+    height: 4em;
+    opacity: .15;
+  }
+
+  .message {
+    margin: .75em 1em;
+    color: #9aa0a6;
+    cursor: default;
+  }
+}
