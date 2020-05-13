@@ -2,8 +2,8 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: var(--noteep-background);
-  color: var(--noteep-foreground);
+  background-color: var(--background);
+  color: var(--selected);
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -11,7 +11,6 @@ body {
   margin: 0;
   min-width: 360px;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, "Noto Sans Armenian", "Noto Sans Bengali", "Noto Sans Cherokee", "Noto Sans Devanagari", "Noto Sans Ethiopic", "Noto Sans Georgian", "Noto Sans Hebrew", "Noto Sans Kannada", "Noto Sans Khmer", "Noto Sans Lao", "Noto Sans Osmanya", "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Thai", sans-serif;
-  //font-size: 14px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -30,7 +29,7 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
-  color: var(--noteep-foreground);
+  color: var(--selected);
   font: inherit;
 }
 
@@ -42,18 +41,44 @@ span {
 input {
   font: inherit;
   outline: none;
-  border: none;
+  border: 0;
   border-radius: var(--main-radius);
   font-size: 1em;
+  color: var(--selected);
+
+
+  &::placeholder {
+    opacity: .35;
+  }
 
   &:focus {
-    box-shadow: 0 0 1px 2px var(--noteep-brand);
+    box-shadow: 0 0 0 2px var(--border);
   }
+
+  &:focus::placeholder {
+      opacity: .5;
+  }
+
 }
 
 svg {
-  fill: var(--noteep-foreground);
+  fill: var(--action);
+  fill-rule: evenodd; // todo ?
   width: 1.25em;
   height: 1.25em;
   font: inherit;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: 300;
+
+  :visited {
+    color: var(--main-color);
+  }
+
+  &:hover {
+    color: var(--active-color);
+  }
 }

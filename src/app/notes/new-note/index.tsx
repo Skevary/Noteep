@@ -1,8 +1,8 @@
-import React, {FC, useCallback, useMemo, useState} from "react";
+import React, {FC, useCallback, useEffect, useLayoutEffect, useMemo, useState} from "react";
 
 import {
     getFromLS,
-    putInLS,
+    putInLS, useAppDispatch,
     useEffectWithDebounce,
 } from "../../shared/utility";
 
@@ -14,6 +14,9 @@ import Editor, {createNewPost, cssWrapper} from "../uttility";
 import {NewPostBox} from "../models";
 
 import './styles.scss';
+import {BlockStyleControls, InlineStyleControls} from "../style-button";
+import {RichUtils} from "draft-js";
+import {actions} from "../../store";
 
 
 interface Props {
@@ -26,10 +29,16 @@ const NewNote: FC<Props> = ({addNewNote, ...props}) => {
         const editor = getFromLS('nwPstEdtr');
         return !!editor ? Editor.createFromRaw(editor) : Editor.empty()
     });
+    const dispatch = useAppDispatch();
+
 
     const [box, setBox] = useState<NewPostBox>(
         getFromLS('nwPstBox') || cssWrapper(editorState)
     );
+
+    useLayoutEffect(() => {
+        dispatch(actions.core.changeLoadIndicator('progress'));
+    }, [editorState, dispatch]);
 
     // save temp state to localstorage
     useEffectWithDebounce(
@@ -39,7 +48,10 @@ const NewNote: FC<Props> = ({addNewNote, ...props}) => {
 
     // save css container to localstorage
     useEffectWithDebounce(
-        () => putInLS(box, 'nwPstBox'),
+        () => {
+            putInLS(box, 'nwPstBox');
+            dispatch(actions.core.changeLoadIndicator('ready'));
+        },
         1000, [box]
     );
 
@@ -52,9 +64,31 @@ const NewNote: FC<Props> = ({addNewNote, ...props}) => {
         addNewNote(createNewPost(editorState)); // pass new Post
     }, [editorState, addNewNote]);
 
+    const toggleBlockType = (blockType: string) => {
+        setEditorState(
+            RichUtils.toggleBlockType(editorState, blockType)
+        );
+    };
+
+    const toggleInlineStyle = (inlineStyle: string) => {
+        setEditorState(
+            RichUtils.toggleInlineStyle(editorState, inlineStyle)
+        );
+    };
+
     return (
         <PageBlock className={`post_new_note ${box}`}>
+            <div className="editor-ctrls">
+                <InlineStyleControls
+                    editor={editorState}
+                    onToggle={toggleInlineStyle}
+                />
 
+                <BlockStyleControls
+                    editor={editorState}
+                    onToggle={toggleBlockType}
+                />
+            </div>
             <NoteEditor
                 className={box}
                 openBox={setBox}

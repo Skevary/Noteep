@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 200px;
+  width: 100%;
 
   svg.Icon {
     width: 4em;
@@ -13,7 +14,7 @@
 
   .message {
     margin: .75em 1em;
-    color: #9aa0a6;
+    color: var(--action);
     cursor: default;
   }
 }

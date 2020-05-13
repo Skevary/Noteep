@@ -11,15 +11,20 @@ import {PageMeta} from "../../router";
 export const NavBar: FC = memo(() => {
     const path = useSelector(({core}: RootState) => core.currentPage);
 
+    const changePath = (id: string) => {
+        navigate(id)
+    };
+
     console.log(`@NavBar rerender: `, path);
+
     const items = Object.entries(PageMeta)
         .map(([key, {icon, nav, id}]) =>
             <Button
                 key={key}
                 tag={'span'}
                 icon={icon}
-                className={classes('item', id === path ? 'active' : '')}
-                onClick={() => navigate(id)}>
+                className={classes('item', id === path ? 'selected' : '')}
+                onClick={() => changePath(id)}>
                 {nav}
             </Button>
         );

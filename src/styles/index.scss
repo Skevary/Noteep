@@ -9,6 +9,10 @@
   text-overflow: ellipsis;
 }
 
+.rotate-spinner {
+  animation: spin .6s linear infinite;
+}
+
 .rotate:hover {
   svg {
     animation: spin .6s linear infinite;
@@ -23,3 +27,4 @@
     transform: rotate(360deg);
   }
 }
+

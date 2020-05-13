@@ -1,8 +1,11 @@
-import React, {FC, memo, useEffect, useState} from "react";
+import React, {FC, memo, useEffect, useRef, useState} from "react";
 import {useSelector} from "react-redux";
 import {putInLS, useAfterEffect, useAppDispatch} from "../../shared/utility";
 import {actions, RootState} from "../../store";
 import {Button} from "../../shared/ui/button";
+
+import {CoreState} from "../../store/core";
+import {IconName} from "../../shared/ui/icon";
 
 import './styles.scss';
 
@@ -11,20 +14,20 @@ const TopBar: FC = memo(() => {
 
     return (
         <header>
-          <div className="TopBar">
-              <div className='wrapper'>
-                  <Burger/>
-                  <Brand/>
-                  <Search/>
-              </div>
-              <div className='wrapper'>
-                  <Update/>
-                  <ViewMode/>
-                  <Theme/>
-                  <Settings/>
-                  <UserProfile/>
-              </div>
-          </div>
+            <div className="TopBar">
+                <div className='wrapper'>
+                    <Burger/>
+                    <Brand/>
+                    <Search/>
+                </div>
+                <div className='wrapper'>
+                    <Update/>
+                    <ViewMode/>
+                    <Theme/>
+                    <Settings/>
+                    <UserProfile/>
+                </div>
+            </div>
         </header>
     )
 });
@@ -62,18 +65,24 @@ const Brand: FC = () => {
 
 const Search: FC = () => {
     const [input, setInput] = useState('');
-    // console.log('From Search');
+    const [focused, setFocused] = useState(false);
+    const css = 'Search' +
+        (input.length ? ' mark' : '') +
+        (focused ? ' selected' : '');
 
+    // console.log('From Search');
     return (
-        <div className='Search'>
+        <div className={css}>
             <Button
+                tag={'span'}
                 icon={'Search'}
-                className={'embedded sm'}
-                style={{left: 3}}
+                className={'sm'}
             />
 
             <input
                 value={input}
+                onBlur={() => setFocused(false)}
+                onFocus={() => setFocused(true)}
                 onChange={e => setInput(e.target.value)}
                 placeholder='Search...'
             />
@@ -81,18 +90,41 @@ const Search: FC = () => {
             {input && (
                 <Button
                     icon={'Cross'}
-                    className={'embedded sm'}
+                    className={'sm'}
+                    title={'clear field'}
                     onClick={() => setInput('')}
-                    style={{right: 3}}
                 />)}
         </div>
     )
 };
 
+const indicator: Record<CoreState['loadIndicator'], { icon: IconName }> = {
+    ready: {icon: 'Update'},
+    error: {icon: 'Cross'},
+    progress: {icon: 'Spinner'},
+    success: {icon: 'CircleChecked'}
+};
+
 const Update: FC = () => {
+    const load = useSelector(({core}: RootState) => core.loadIndicator);
+    const dispatch = useAppDispatch();
+    const timer = useRef<any>();
+
+    const update = () => {
+        !!timer.current && clearTimeout(timer.current);
+        dispatch(actions.core.changeLoadIndicator('progress'));
+        timer.current = setTimeout(endLoading, 1500);
+    };
+
+    const endLoading = () => {
+        dispatch(actions.core.changeLoadIndicator('ready'));
+        clearTimeout(timer.current);
+    };
+
     return (
         <Button
-            icon={'Update'} className={'rotate'}
+            icon={indicator[load].icon}
+            onClick={update}
         />
     );
 };

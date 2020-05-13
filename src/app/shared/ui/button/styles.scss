@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--main-radius);;
 
+  border-radius: 50%;
   background-color: transparent;
-  transition: opacity .218s linear;
+
+  color: var(--action);
+  cursor: pointer;
 
   max-width: max-content;
   max-height: max-content;
@@ -14,68 +16,32 @@
   min-width: min-content;
   min-height: min-content;
 
+  transition: opacity .218s linear;
+
   .Icon {
+    fill: var(--action);
     overflow: inherit;
-    margin: .25em;
+    margin: .3em;
+  }
+
+  &:not(div):hover {
+    color: var(--selected);
+    .Icon {
+      fill: var(--selected);
+    }
+  }
+
+  &.selected {
+    .Icon {
+      fill: var(--selected);
+    }
+    .text {
+      color: var(--selected);
+    }
   }
 
 }
 
-
-button.Btn {
-  opacity: .75;
-  cursor: pointer;
-
-  .text {
-    margin-right: .5em;
-  }
-
-  &:hover {
-    opacity: 1;
-    background-color: var(--hover-color);
-  }
-}
-
-span.Btn {
-  opacity: .85;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 1;
-    background-color: var(--hover-color);
-  }
-}
-
-
-div.Btn {
-  opacity: .95;
-  cursor: initial;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.Btn.embedded {
-  position: absolute;
-
-  .Icon {
-    fill: var(--menu-background);
-  }
-
-  &:hover {
-    background-color: transparent;
-  }
-}
-
-.Btn.transparent {
-  background-color: transparent;
-  opacity: .65;
-  &:hover {
-    opacity: 1;
-    background-color: transparent;
-  }
-}
 
 .Btn {
   &.lg {
@@ -105,17 +71,14 @@ div.Btn {
 }
 
 .Btn.brand {
-  background-color: var(--noteep-brand);
-  color: #d3d3d3;
-  opacity: .75;
+  background-color: var(--main-color);
+  color: var(--selected);
 
   .text {
-    opacity: 1;
-    margin: .35em .75em;
+    margin: var(--low-spacing) .75em;
   }
 
   &:hover {
-    background-color: var(--noteep-brand);
-
+    background-color: var(--active-color);
   }
 }

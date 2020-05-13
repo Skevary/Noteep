@@ -32,3 +32,5 @@ export type RootState = ReturnType<typeof reducer>;
 export type AppDispatch = typeof store.dispatch
 
 export default store;
+
+// TODO: USE data-attr instead className

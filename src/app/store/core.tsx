@@ -6,7 +6,7 @@ export interface CoreState {
     sidebar: 'collapsed' | 'expanded'
     theme: 'light' | 'dark';
     viewMode: 'list' | 'tiles';
-    refresh?: 'ready' | 'inProgress' | 'success' | 'error';
+    loadIndicator: 'ready' | 'progress' | 'success' | 'error';
     searchValue: string;
     currentPage: PagesPaths;
 }
@@ -16,7 +16,7 @@ const initialState: Readonly<CoreState> = {
     theme: getFromLS('theme') || 'light',
     viewMode: getFromLS('view') || 'list',
     searchValue: '',
-    refresh: 'ready',
+    loadIndicator: 'ready',
     currentPage: getFromLS('page') || '/'
 };
 
@@ -41,6 +41,9 @@ export default createSlice({
         },
         setActivePage(state, {payload}) {
             state.currentPage = payload;
+        },
+        changeLoadIndicator(state, {payload}) {
+            state.loadIndicator = payload;
         }
     }
 });

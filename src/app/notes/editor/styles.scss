@@ -2,6 +2,20 @@
 
 .note_editor {
   padding: .75em 1em;
+
+  span {
+    display: inline;
+  }
+
+.public-DraftEditorPlaceholder-hasFocus {
+  .public-DraftEditorPlaceholder-inner {
+    opacity: .75;
+  }
+}
+  .public-DraftEditorPlaceholder-inner {
+    color: var(--selected);
+    opacity: .35;
+  }
 }
 
 .note_editor.open {

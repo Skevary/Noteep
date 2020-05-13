@@ -11,6 +11,7 @@ aside.Menu {
 
   nav {
     flex: auto;
+    padding-top: 1em;
   }
 
   footer {
@@ -38,18 +39,17 @@ aside.Menu {
 
       .text {
         //width: auto;
-        opacity: 1;
         transition-duration: 250ms;
         transition-property: width, box-shadowm, opacity;
       }
 
 
       &:hover {
-        background-color: var(--hover-color);
-        opacity: 1;
+        background-color: var(--hover-bg);
+        opacity: .9;
       }
 
-      &.active {
+      &.selected {
         background-color: var(--active-color);
       }
     }
@@ -63,7 +63,7 @@ aside.Menu.collapsed {
     nav, footer {
       .item {
         margin: 0 .5em;
-        border-radius: var(--main-radius);
+        border-radius: 50%;
         min-width: auto;
 
         .Icon {

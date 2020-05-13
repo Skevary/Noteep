@@ -2,35 +2,61 @@ body {
 
   /* App variables */
   --main-radius: 4px;
-  --top-height: 2.75em;
+  --ellipsis-radius: 12px;
+  --top-height: 2.5em;
   --sidebar-width: 10em;
-  --border-edge: .5em;
-  /* Theme color set declaration */
 
+  --border-edge: .5em;
+
+  --low-spacing: .25em;
+  --md-spacing: .35em;
+  --h-spacing: .5em;
+
+  /* Theme color set declaration */
   &.dark {
-    --noteep-brand: #007acc;
-    --noteep-brand-light: rgb(3, 155, 229);
-    --noteep-background: #1e1e1e;
-    --noteep-foreground: #d4d4d4;
-    --placeholder-foreground: #a6a6a6;
-    --menu-background: #252526;
-    --menu-foreground: #cccccc;
-    --hover-color: rgba(166, 166, 166, 0.15);
-    --active-color: rgba(0, 122, 204, 0.85);
-    --sidebar-title-foreground: #bbbbbb;
+    --box-foreground: #313131;
+    --box-border: #343434;
+    --background: #251f1f;
+    --action: #b79b9b;
+    --selected: #f9f6f6;
+    --border: rgba(65, 131, 196, .3);
+    --hover-bg: #3e5d48;
+    --box-container: #292727;
+
+    --box-shadow: 0 1px 0 0 rgb(76 73 73 / 65%), 0 0 0 1px rgb(56 47 47 / 75%);
+    --header-shadow: 0 1px 0 0 rgb(52 52 52 / 95%), 0 0 0 1px rgba(52 52 52 / 75%);
+
+    --main-color: #3a803d;
+    --active-color: #386f37;;
+
+    // Preview renders
+    --e-plant: #d2d2d2;
+    --e-header: #dadada;
+    --e-pre-bg: rgb(103 103 103 / 0.25);
+    --e-code: rgb(80 80 80 / 48%);
   }
 
   &.light {
-    --noteep-brand: #007acc;
-    --noteep-brand-light: #569CD6;
-    --noteep-background: #edeef0;
-    --noteep-foreground: #000000;
-    --placeholder-foreground: #d3d3d3 ;
-    --menu-background: #ffffff;
-    --menu-foreground: #d6d6d6;
-    --hover-color: rgba(166, 166, 166, 0.15);
-    --active-color: rgba(0, 122, 204, 0.85);
-    --sidebar-title-foreground: #bbbbbb;
+    --box-foreground: #fafbfc;
+    --box-border: #e7e8ec;
+    --background: #edeef0;
+    --action: #3c3c3c;
+    --selected: #1d1d1d;
+    --border: rgba(65, 131, 196, .3);
+    --hover-bg: rgba(166, 166, 166, 0.15);
+    --box-container: #fff;
+
+    --box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    --header-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+
+    --main-color: #64B5F6;
+    --active-color: #42A5F5;
+
+    // Preview renders
+    --e-plant: #424242;
+    --e-header: #2b2b2b;
+    --e-pre-bg: rgb(241 243 247);
+    --e-code: rgb(223 242 251 / 30%);
   }
 
 }

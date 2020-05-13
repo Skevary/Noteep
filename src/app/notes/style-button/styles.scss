@@ -1,0 +1,10 @@
+.style-ctrls {
+  display: flex;
+
+  align-items: center;
+  .active {
+    svg {
+      fill: var(--active-color);
+    }
+  }
+}

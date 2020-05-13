@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useLayoutEffect} from 'react';
 import {
     TopBar,
     Sidebar,
@@ -8,9 +8,16 @@ import {
 import Router from "./router";
 
 import './styles.scss';
+import {useAppDispatch} from "./shared/utility";
+import {actions} from "./store";
 
 const App: FC = () => {
     console.log('@@@App rerender');
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(actions.core.changeLoadIndicator('progress'))
+    }, []);
 
     return (
         <>

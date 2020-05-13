@@ -1,14 +1,9 @@
 ### Noteep 
- Manager notes similar to Google Keep. 
+ Notes manager. Development in progress...
 
 ### Features
-- rich text editor (based in Draft.js)
-- edit note like WYSIWYG
-
-### Todo
-
--[ ] Basic Layout
--[ ] Top Bar
--[ ] Navigation
--[ ] Pages
--[ ] Icons
+- TypeScript
+- React
+- Redux 
+- SCSS
+- Draft.js

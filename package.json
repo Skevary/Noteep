@@ -2,6 +2,14 @@
   "name": "noteep",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "icons:generate": "svgr src/assets/icons/ -d src/app/shared/icons/ --typescript --template ./svgrTypescript.js",
+    "icon:clear": "rm -rf src/app/components/icons/*"
+  },
   "dependencies": {
     "draft-js": "^0.11.5",
     "hookrouter": "^1.2.3",
@@ -25,14 +33,6 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-redux": "^7.1.7"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "icons:generate": "svgr src/assets/icons/ -d src/app/libs/svg-icons/ --typescript --template ./svgrTypescript.js",
-    "icon:clear": "rm -rf src/app/components/icons/*"
   },
   "eslintConfig": {
     "extends": "react-app"

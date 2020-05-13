@@ -3,11 +3,16 @@
   height: fit-content;
   transition: height .56s ease-in-out;
 
+  .editor-ctrls {
+    display: flex;
+    align-items: center;
+    padding: .25em 1em .25em .5em;
+  }
+
   .submit_post {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fafbfc;
     border-top: 1px solid #e7e8ec;
     border-radius: 0 0 var(--main-radius) var(--main-radius);
     padding: .25em 1em .25em .5em;
@@ -18,7 +23,19 @@
     }
 
     .add_post_wrap {
+      .brand {
+        border-radius: var(--main-radius);
+
+        .text {
+        }
+      }
     }
+  }
+
+  &.collapsed .editor-ctrls {
+    overflow: hidden;
+    height: 0;
+    padding: 0;
   }
 
   &.collapsed .submit_post {
@@ -44,8 +61,8 @@
 
 
   &.open .submit_post {
-    background: #fafbfc;
-    border-top: 1px solid #e7e8ec;
+    background: var(--box-foreground);
+    border-top: 1px solid var(--box-border);
     border-radius: 0 0 var(--main-radius) var(--main-radius);
     padding: .25em 1em .25em .5em;
     height: fit-content;
