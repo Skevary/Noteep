@@ -77,7 +77,7 @@ const NewNote: FC<Props> = ({addNewNote, ...props}) => {
     };
 
     return (
-        <PageBlock className={`post_new_note ${box}`}>
+        <PageBlock className={`post_new_note markup ${box}`}>
             <div className="editor-ctrls">
                 <InlineStyleControls
                     editor={editorState}

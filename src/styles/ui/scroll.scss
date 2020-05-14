@@ -1,0 +1,32 @@
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  transition: background-color, border .566s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 2rem;
+  background: var(--scrollbar-color);
+  background-clip: padding-box;
+  border: .3rem solid transparent;
+  border-radius: var(--main-radius);
+
+  &:hover {
+    min-height: 2rem;
+    background: var(--scrollbar-over-color);
+    background-clip: padding-box;
+    border: .23rem solid transparent;
+    border-radius: var(--main-radius);
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border: .25rem solid var(--background);
+
+  &:hover {
+    background: var(--box-container);
+  }
+}

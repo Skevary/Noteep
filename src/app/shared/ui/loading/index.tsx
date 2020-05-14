@@ -1,9 +1,12 @@
 import React, {FC} from "react";
+import {Icon} from "../icon";
 import './styles.scss';
 
-interface Props {
-}
-
-export const Loading: FC<Props> = props => {
-    return <h3>Loading…</h3>;
+export const Loading: FC = () => {
+    return (
+        <Icon
+            name={'Spinner'}
+            className={'spinner'}
+        />
+    );
 };

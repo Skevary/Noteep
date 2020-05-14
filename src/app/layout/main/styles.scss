@@ -1,9 +1,12 @@
 .Main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   position: relative;
-  margin: var(--top-height) var(--border-edge) 0 var(--sidebar-width);
-  max-width: calc(100% - (var(--sidebar-width) + var(--border-edge) * 2));
-  min-width: 200px;
+  z-index: 2;
+  margin-left: var(--sidebar-width);
+  margin-top: var(--top-height);
+  height: 100%;
+  overflow-y: scroll;
+
+  @media only screen and (max-width: 768px){
+    margin-left: 3rem;
+  }
 }

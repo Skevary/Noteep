@@ -1,0 +1,72 @@
+@import 'consts'; // whole app constants
+@import 'dark', 'light'; // theme colors collection
+
+// Posts markup
+.markup {
+  font-size: 1em;
+  font-family: var(--ff-mu-header);
+  color: var(--clr-mu-default);
+  -webkit-font-smoothing: antialiased;
+  clear: both;
+
+  a {
+    color: var(--clr-mu-action);
+    text-decoration: none;
+    font-weight: 400;
+
+    :visited {
+      color: var(--clr-mu-action);
+    }
+
+    &:hover {
+      color: var(--active-color);
+    }
+  }
+
+
+  ol, ul {
+    margin: var(--mu-lw-space) 0 0;
+    padding: 0 0 0 1.15em;
+
+    li {
+      margin-bottom: var(--mu-lw-space);
+    }
+  }
+
+  b, strong {
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  pre, code {
+    background-color: #eee;
+    border-radius: var(--main-radius);
+    margin: 0 2px;
+    padding: 1px 4px 2px;
+    word-break: break-word;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  p, span {
+    //color: rgba(0,0,0,0.86)
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: .5em 0 .5em -.15em;
+    font-size: 1.35em;
+  }
+
+  blockquote {
+    color: var(--clr-mu-semi);
+    margin: .5em 0;
+    padding: .35em 1em;
+    border-left: 2px solid var(--active-color) !important;
+    font-style: italic;
+    .public-DraftStyleDefault-block {
+      margin: 0;
+    }
+  }
+
+
+}

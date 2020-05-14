@@ -1,0 +1,28 @@
+// markup - *mu*
+
+html {
+  /* Fonts */
+
+  --ff-default: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, "Noto Sans Armenian", "Noto Sans Bengali", "Noto Sans Cherokee", "Noto Sans Devanagari", "Noto Sans Ethiopic", "Noto Sans Georgian", "Noto Sans Hebrew", "Noto Sans Kannada", "Noto Sans Khmer", "Noto Sans Lao", "Noto Sans Osmanya", "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Thai", sans-serif;
+
+  --ff-mu-header: "PT Serif","Noto Sans Armenian","Noto Sans Bengali","Noto Sans Cherokee","Noto Sans Devanagari","Noto Sans Ethiopic","Noto Sans Georgian","Noto Sans Hebrew","Noto Sans Kannada","Noto Sans Khmer","Noto Sans Lao","Noto Sans Osmanya","Noto Sans Tamil","Noto Sans Telugu","Noto Sans Thai",serif;
+
+
+  /* Edges */
+
+  --mu-md-space: .75em;
+  --mu-lw-space: .5em;
+
+
+  /* App variables */
+  --main-radius: 4px;
+  --ellipsis-radius: 12px;
+  --top-height: 2.5rem;
+  --sidebar-width: 10rem;
+
+  --border-edge: .5rem;
+
+  --low-spacing: .25em;
+  --md-spacing: .35em;
+  --h-spacing: .5em;
+}

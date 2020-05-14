@@ -1,9 +1,5 @@
-import React, {FC, useEffect, useLayoutEffect} from 'react';
-import {
-    TopBar,
-    Sidebar,
-    MainContent
-} from "./layout";
+import React, {FC, useEffect} from 'react';
+import {MainContent, Sidebar, TopBar} from "./layout";
 
 import Router from "./router";
 

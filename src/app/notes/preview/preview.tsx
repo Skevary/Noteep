@@ -50,7 +50,9 @@ const Preview: FC<Props> = ({post}) => {
               </div>
             </div>
             <div className="post-content">
-                {rendered}
+                <div className="content markup">
+                    {rendered}
+                </div>
                 {data.type === 'preview' && (
                     <Button
                         style={{padding: '.15em', fontSize: '.85em'}}

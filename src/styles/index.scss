@@ -1,7 +1,8 @@
 @import '~@csstools/normalize.css';
 
-@import "themes";
-@import "overrides";
+@import 'overrides';
+@import 'themes';
+@import 'ui';
 
 .trim-text {
   white-space: nowrap;

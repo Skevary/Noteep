@@ -13,8 +13,7 @@ const TopBar: FC = memo(() => {
     console.log(`@@TopBar rerender: `);
 
     return (
-        <header>
-            <div className="TopBar">
+        <header className="TopBar">
                 <div className='wrapper'>
                     <Burger/>
                     <Brand/>
@@ -27,7 +26,6 @@ const TopBar: FC = memo(() => {
                     <Settings/>
                     <UserProfile/>
                 </div>
-            </div>
         </header>
     )
 });
@@ -151,7 +149,7 @@ const Theme: FC = () => {
     const theme = useSelector(({core}: RootState) => core.theme);
     // console.log('From Theme');
     useEffect(() => {
-        document.body.className = theme;
+        document.documentElement.className = theme;
     }, [theme]);
 
     useAfterEffect(() => {

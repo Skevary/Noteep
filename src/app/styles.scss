@@ -1,26 +1,22 @@
 /** App Root **/
 
 #root {
-  //display: grid;
-  //height: 100vh;
-  //grid: 'header header' auto 'aside main' 1fr
-  //      / auto 1fr;
-  //min-width: max-content;
-  display: flex;
-  flex-direction: column;
   position: relative;
-  width: 1920px;
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+  transition: opacity .2s;
+  box-sizing: border-box;
+
   header {
-    //display: flex;
-    //height: 3em;
-    //grid-area: header;
+    box-sizing: border-box;
   }
 
   aside {
-    //grid-area: aside;
+    box-sizing: border-box;
   }
 
   main {
-    //grid-area: main;
+    box-sizing: border-box;
   }
 }

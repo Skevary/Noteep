@@ -1,19 +1,28 @@
 .page_container {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  width: 100%;
-  min-width: 400px;
-  padding: 1.5em 1em;
+  padding: 1rem var(--border-edge);
+  max-width: 50%;
+  margin: auto;
+
+  @media only screen and (max-width: 1366px){
+    max-width: 65%;
+
+    @media only screen and (max-width: 768px){
+      max-width: 85%;
+      @media only screen and (max-width: 560px){
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 
 [data-view-mode="tiles"] {
-  max-width: inherit;
+  max-width: 95%;
   align-items: center;
   .post_new_note {
     width: 50%;
+    margin: auto;
   }
 
   .posts_wrapper {
